@@ -1,14 +1,48 @@
+*{
+	font-family: MV BOLI;
+}
 .navigation{
-	border: 2px solid black;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	height: 120px;
 }
 .logo{
-	border: 2px solid black;
+	font-family: segoe print;
 	margin-left: 100px;
 }
 .nav-links{
-	border: 2px solid black;
 	margin-right: 100px;
+}
+.nav-links >a{
+	text-decoration: none;
+	color: black;
+	margin: 10px;
+	padding: 5px;
+	transition: 0.7s;
+}
+.nav-links >a:hover{
+	background-color: black;
+	color: white;
+}
+.header{
+	height:650px;
+	background-image: url(tt/02.jpg);
+}
+.blackout{
+	background-color: rgba(0,0,0,0.8);
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header-content{
+	color: white;
+	text-align: center;
+
+}
+.header-content >a{
+	color: none;
+	text-decoration: none;
+	background-color: green;
 }
