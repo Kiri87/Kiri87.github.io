@@ -9,6 +9,10 @@ body{
 	justify-content: space-between;
 	align-items: center;
 	height: 120px;
+	position: fixed;
+	background-color: white;
+	width:100%;
+	box-shadow: 4px 4px 4px;
 }
 .logo{
 	font-family: segoe print;
@@ -93,7 +97,6 @@ body{
 }
 .services-top{
 	text-align: center;
-	border: 1px solid black;
 }
 .services-bot{
 	display: flex;
@@ -107,4 +110,21 @@ body{
 	margin: 15px;
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+.blog{
+	border: 1px solid black;
+}
+.blog-top{
+	border: 1px solid black;
+}
+.blog-bot{
+	border: 1px solid border;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.blog-item{
+	border: 1px solid black;
+	width: 40%;
+	height: 400px;
 }
