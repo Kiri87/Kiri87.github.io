@@ -4,6 +4,26 @@
 body{
 	margin: 0;
 }
+@keyframes lighting{
+	0%{
+		background-color: rgb(102,192,225);
+		box-shadow: 2px 2px 4px black;
+	}
+	33%{
+		background-color: rgb(183,102,225);
+		box-shadow: 2px 2px 4px black;
+		margin: 20px;
+	}
+	66%{
+		background-color: rgb(226,85,80);
+		box-shadow: 2px 2px 4px black;
+	}
+	100%{
+		background-color: rgb(80,226,117);
+		box-shadow: 2px 2px 4px black;
+	}
+
+}
 .navigation{
 	display: flex;
 	justify-content: space-between;
@@ -17,6 +37,26 @@ body{
 .logo{
 	font-family: segoe print;
 	margin-left: 100px;
+	display: flex;
+}
+.light{
+	width: 25px;
+	height: 25px;
+	border-radius: 100%;
+	background-color: rgb(116,147,236);
+	margin: 1px;				
+}
+.l1{
+	animation: lighting 2.14s linear infinite;
+}
+.l2{
+	animation: lighting 2.9s linear infinite;
+}
+.l3{
+	animation: lighting 2.5s linear infinite;
+}
+.l4{
+	animation: lighting 3.3s linear infinite;
 }
 .nav-links{
 	margin-right: 100px;
@@ -27,7 +67,6 @@ body{
 	margin: 10px;
 	padding: 5px;
 	transition: 0.7s;
-
 }
 .nav-links >a:hover{
 	background-color: black;
