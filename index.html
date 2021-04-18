@@ -2,8 +2,30 @@
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+		
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
+	<form>
+		<label>Имя: </label>
+		<input id="name" type="text">
+		<br>
+		<label>Мат: </label>
+		<input id="math" type="text">
+		<br>
+		<label>Рус: </label>
+		<input id="rus" type="text">
+		<br>
+		<label>Инф: </label>
+		<input id="cs" type="text">
+		<br>
+		<input id="addStudent" type="button" value="Добавить ученика">
+
+
+
+	</form>
 	<script type="text/javascript">
 		class Student 
 		{
@@ -32,16 +54,41 @@
 				return result;
 			}
 		}
-
-		var p1 = new Student("Крис", 3,4,2);
-		var p2 = new Student("Дима", 4,4,4);
-		var p3 = new Student("Настя",3,5,5);
-		
-		console.log(p1)
-		console.log(p2)
-		console.log(p3)
 		
 	</script>
+	<script type="text/javascript">
+		var StudentArray = [];
 
+		function BubbleSort()
+		{
+			var n = StudentArray.lenght();
+			for (var i = 0; i < n; i++) {
+				for(var j = 0; j < n - 1; j++)
+				{
+					if(StudentArray[j].Average > StudentArray[j+1].Average)
+					{
+						var tmp = StudentArray[j];
+						StudentArray[j] = StudentArray[j+1];
+						StudentArray[j+1] = tmp;
+					}
+				}
+			}
+		}
+
+		function addStudent()
+		{
+			var studentName = +$("#name").val();
+			var math = +$("#math").val();
+			var rus = +$("#rus").val();
+			var cs = +$("#cs").val();
+
+			var stud = new Student(studentName, math, rus, cs);
+			StudentArray.push(stud);
+			console.log(StudentArray);
+
+
+		}
+		$("#addStudent").click(addStudent);
+	</script>
 </body>
 </html>
