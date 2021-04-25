@@ -22,10 +22,16 @@
 		<input id="cs" type="text">
 		<br>
 		<input id="addStudent" type="button" value="Добавить ученика">
+		<br>
+		<input id="sortStudent" type="button" value="Сортировать">
 
 
 
 	</form>
+	<div id="info">
+		
+	</div>
+
 	<script type="text/javascript">
 		class Student 
 		{
@@ -61,7 +67,7 @@
 
 		function BubbleSort()
 		{
-			var n = StudentArray.lenght();
+			var n = StudentArray.length;
 			for (var i = 0; i < n; i++) {
 				for(var j = 0; j < n - 1; j++)
 				{
@@ -73,22 +79,37 @@
 					}
 				}
 			}
+			showStudent();
 		}
 
 		function addStudent()
 		{
-			var studentName = +$("#name").val();
+			var studentName = $("#name").val();
 			var math = +$("#math").val();
 			var rus = +$("#rus").val();
 			var cs = +$("#cs").val();
 
 			var stud = new Student(studentName, math, rus, cs);
 			StudentArray.push(stud);
-			console.log(StudentArray);
 
+			showStudent();
 
 		}
+		function showStudent()
+		{
+			$("#info > p").remove();
+			var text;
+			var n = StudentArray.length;
+			for(var i = 0; i < n; i++)
+			{
+				text = "имя: " + StudentArray[i].Name + "| средняя оценка" + StudentArray[i].Average;
+			$("#info").append("<p>" + text + "</p>");
+			}
+		}
+
+
 		$("#addStudent").click(addStudent);
+		$("#sortStudent").click(BubbleSort);
 	</script>
 </body>
 </html>
